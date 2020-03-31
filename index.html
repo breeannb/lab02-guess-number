@@ -6,12 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Guess the Number Game</title>
 </head>
 
 <body>
+    <header>
+        <img src=>
+    </header>
 
+    <main>
+
+    <section>
+        <h1>Guess the Number!</h1> 
+        <p>Directions: Take a guess and see if you can get the right number. You can guess anywhere between 1 - 20. This can include the numbers 1 and 20 as well. You will only have 4 guesses, so make them count! We'll also give you some hints if you are too high or too low in the message at the bottom of the screen.</p>
+    </section>
+
+    <section>
+        <div>
+            <!-- An input, allows you to only input numbers 1-20(the limits)-->
+            <input id="number-guess" type="number" min="1" max="20">
+            <!-- button -->
+            <button id="guess-button">Button</button>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>Message Box</h1>
+            <div id="guess-result">Play the Guessing Game to see if you can Win!</div>
+        </div>
+
+        <!-- Need it to display the number of tries remaining -->
+        <div>How many you have left to try:<span id="guesses-remaining">4</span></div>
+
+        <!-- Need it to display if guess is too high or too low -->
+
+    
+        <!-- Need it to display win or lose result at the end -->
+        <h1 id='final-message'>Final Message</h1>
+
+    </section>
+    
+    </main>
     <script type="module" src="app.js"></script>
+
 </body>
 
 </html>
