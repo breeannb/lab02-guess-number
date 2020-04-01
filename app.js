@@ -11,6 +11,18 @@ const countRemaining = document.getElementById('remaining');
 let rightAnswer = Math.ceil(Math.random() * 20); 
 let numberOfGuessesRemaining = 4; 
 
+function compareNumbers (guess, rightAnswer) {
+    if (guessInput.value > rightAnswer) {
+        endPhrase.textContent = 'Your number is too high!';
+    }
+    else if (guessInput.value < rightAnswer) { 
+        endPhrase.textContent = 'Your number is too low!';
+    }
+    else { 
+        endPhrase.textContent = 'Hooray! You got the right answer!';
+    }
+};
+
 // Event Listeners 
 submitButton.addEventListener('click', () => {
     compareNumbers();
