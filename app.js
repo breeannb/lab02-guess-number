@@ -1,42 +1,25 @@
-// Import function from other js file
-const finalMessage = document.getElementById('final-message');
-const numberGuessInput = document.getElementById('number-guess');
-const submitButton = document.getElementById('guess-button');
-const guessesRemaining = document.getElementById('guesses-remaining');
+// Import function from other file 
+import { compareNumbers } from './function.js'; 
 
+// reference DOM elements 
+const endPhrase = document.getElementById('end-phrase');
+const guessInput = document.getElementById('guess-number');
+const submitButton = document.getElementById('button');
+const countRemaining = document.getElementById('remaining');
 
-// Reference the Dom elements that I established, the button and quiz results from HTML
+// reference compareNumbers function from imported file function.js
+let rightAnswer = Math.ceil(Math.random() * 20); 
+let numberOfGuessesRemaining = 4; 
 
-let correctAnswer = Math.ceil(Math.random() * 20); 
-
-// console.log(correctAnswer); 
-
-let triesRemaining = 4; 
-
-// The function of submissions and prompts 
-
-function compareNumbers() {
-    if (numberGuessInput.value > correctAnswer){ 
-        finalMessage.textContent = 'Too high';
-    }
-    else if (numberGuessInput.value < correctAnswer) {
-        finalMessage.textContent = 'Too low';
-    }
-    else {
-        finalMessage.textContent = 'Nice Guess! You got it!';
-    }
-}
-// Has two parameters guess and correctNumber
-
-// Button Event Listeners 
+// Event Listeners 
 submitButton.addEventListener('click', () => {
-    compareNumbers(); 
-    triesRemaining--;
-    guessesRemaining.textContent = triesRemaining; 
+    compareNumbers();
+    countRemaining--;   // Means the decrement of the counts remaining 
+    numberOfGuessesRemaining.textContent = countRemaining; 
 
-    if(triesRemaining === 0) { 
-        finalMessage.textContent = 'Sorry, you lost this time :('; 
-        document.getElementById('guess-button').disabled = true;
+    if (countRemaining === 0) { 
+        endPhrase.textContent = "I'm sorry, but you lost. Game over."; 
+        document.getElementById('button').disabled = true; //This is what prevents the guesses from continueing
     }
 
 });
